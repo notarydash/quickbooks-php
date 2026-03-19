@@ -354,7 +354,7 @@ class QuickBooks_IPP_Parser
 
 					$attrs = $List->attributes();
 
-					if (!array_key_exists('startPosition', $attrs) and
+					if (is_array($attrs) and !array_key_exists('startPosition', $attrs) and
 						array_key_exists('totalCount', $attrs))
 					{
 						return $attrs['totalCount'];
